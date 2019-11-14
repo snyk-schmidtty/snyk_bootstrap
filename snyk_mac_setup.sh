@@ -8,13 +8,14 @@ echo "Installing Xcode..."
 read -p "Press any key to continue... " -n1 -s
 xcode-select --install
 
-#Casks to install
+#Apps to install
 apps=(
   intellij-idea-ce
   visual-studio-code
   dotnet-sdk
   eclipse-jee
   github
+  adoptopenjdk
 )
 
 #Formula to install
@@ -27,7 +28,7 @@ formula=(
   dep
 )
 
-# Install cask apps
+# Install apps
 echo "Installing apps..."
 read -p "Press any key to continue... " -n1 -s
 brew cask install --appdir="/Applications" ${apps[@]}
