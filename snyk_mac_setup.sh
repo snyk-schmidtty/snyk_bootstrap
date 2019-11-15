@@ -26,6 +26,7 @@ formula=(
   rbenv
   python3
   dep
+  maven
 )
 
 # Install apps
@@ -61,5 +62,16 @@ rbenv rehash
 echo "Install Snyk..."
 read -p "Press any key to continue... " -n1 -s
 npm install -g snyk
+
+#Clone Goof Git Repos
+git clone git@github.com:snyk/goof.git ~/Snyk/Workspace/goof
+git clone git@github.com:snyk/java-goof.git ~/Snyk/Workspace/java-goof
+git clone git@github.com:snyk/docker-goof.git ~/Snyk/Workspace/docker-goof
+git clone git@github.com:snyk/shallow-goof.git ~/Snyk/Workspace/shallow-goof
+git clone git@github.com:snyk/goof-heroku.git ~/Snyk/Workspace/goof-heroku
+git clone git@github.com:pstember/go-goof.git ~/Snyk/Workspace/go-goof
+git clone git@github.com:pstember/ruby-goof.git ~/Snyk/Workspace/ruby-goof
+git clone git@github.com:pstember/goof-jenkins.git ~/Snyk/Workspace/goof-jenkins
+git clone git@github.com:pstember/dotNet-goof.git ~/Snyk/Workspace/dotNet-goof
 
 echo "Ready to Snyk"
