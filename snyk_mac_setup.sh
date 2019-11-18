@@ -16,6 +16,7 @@ apps=(
   eclipse-jee
   github
   adoptopenjdk
+  iterm2
 )
 
 #Formula to install
@@ -27,6 +28,7 @@ formula=(
   python3
   dep
   maven
+  jenkins-lts
 )
 
 # Install apps
