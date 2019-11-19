@@ -32,6 +32,10 @@ formula=(
   jenkins-lts
 )
 
+#Install Java
+brew tap AdoptOpenJDK/openjdk
+brew cask install adoptopenjdk8
+
 # Install apps
 echo "Installing apps..."
 read -p "Press any key to continue... " -n1 -s
