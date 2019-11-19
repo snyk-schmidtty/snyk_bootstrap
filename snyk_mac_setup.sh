@@ -17,6 +17,7 @@ apps=(
   github
   adoptopenjdk
   iterm2
+  powershell
 )
 
 #Formula to install
