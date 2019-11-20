@@ -30,6 +30,7 @@ formula=(
   dep
   maven
   jenkins-lts
+  htop
 )
 
 #Install Java
