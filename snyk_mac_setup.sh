@@ -31,6 +31,7 @@ formula=(
   maven
   jenkins-lts
   htop
+  nexus
 )
 
 #Install Java
