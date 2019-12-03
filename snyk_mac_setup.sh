@@ -18,6 +18,7 @@ apps=(
   adoptopenjdk
   iterm2
   powershell
+  brave-browser
 )
 
 #Formula to install
