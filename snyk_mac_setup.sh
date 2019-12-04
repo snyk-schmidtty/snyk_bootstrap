@@ -19,6 +19,7 @@ apps=(
   iterm2
   powershell
   brave-browser
+  pycharm-ce
 )
 
 #Formula to install
