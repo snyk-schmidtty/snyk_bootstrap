@@ -21,6 +21,7 @@ apps=(
   brave-browser
   pycharm-ce
   microsoft-edge
+  webex-meetings
 )
 
 #Formula to install
