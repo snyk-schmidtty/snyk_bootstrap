@@ -20,7 +20,7 @@ apps=(
   powershell
   brave-browser
   pycharm-ce
-  microsoft-edge-beta
+  microsoft-edge
 )
 
 #Formula to install
@@ -36,6 +36,7 @@ formula=(
   htop
   nexus
   azure-cli
+  amazon-ecs-cli
 )
 
 #Install Java
