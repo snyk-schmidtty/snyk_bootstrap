@@ -13,7 +13,7 @@ apps=(
   intellij-idea-ce
   visual-studio-code
   dotnet-sdk
-  eclipse-jee
+  eclipse-ide
   github
   adoptopenjdk
   iterm2
@@ -22,23 +22,31 @@ apps=(
   pycharm-ce
   microsoft-edge
   webex-meetings
+  postman
+  sourcetree
+  skitch
+  firefox
+  sublime-text
 )
 
 #Formula to install
 formula=(
+  amazon-ecs-cli
+  azure-cli
+  dep
   go
   git
-  node
-  rbenv
-  python3
-  dep
-  maven
-  jenkins-lts
+  gradle
   htop
-  nexus
-  azure-cli
-  amazon-ecs-cli
+  maven
+  node
+  python3
+  rbenv
 )
+
+#Retired Formula
+#jenkins-lts
+#nexus
 
 #Install Java
 brew tap AdoptOpenJDK/openjdk
@@ -77,6 +85,8 @@ rbenv rehash
 echo "Install Snyk..."
 read -p "Press any key to continue... " -n1 -s
 npm install -g snyk
+npm install -g snyk-to-html
+npm install -g is-website-vulnerable
 
 #Clone Goof Git Repos
 echo "Cloning git repos..."
