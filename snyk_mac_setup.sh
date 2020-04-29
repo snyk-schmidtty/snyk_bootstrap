@@ -34,6 +34,7 @@ formula=(
   amazon-ecs-cli
   azure-cli
   dep
+  docker
   go
   git
   gradle
