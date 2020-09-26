@@ -1,35 +1,27 @@
 #!/bin/sh
 
-#install brew
+# see https://github.com/swschmidt/mac_bootstrap for base Mac setup
+
+# install brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-#install Xcode
+# install Xcode
 echo "Installing Xcode..."
 read -p "Press any key to continue... " -n1 -s
 xcode-select --install
 
-#Apps to install
+# Apps to install
 apps=(
   intellij-idea-ce
-  visual-studio-code
   dotnet-sdk
   eclipse-ide
-  github
   adoptopenjdk
-  iterm2
-  powershell
-  brave-browser
+  adoptopenjdk8
   pycharm-ce
-  microsoft-edge
   webex-meetings
-  postman
-  sourcetree
-  skitch
-  firefox
-  sublime-text
 )
 
-#Formula to install
+# Formula to install
 formula=(
   amazon-ecs-cli
   azure-cli
@@ -45,27 +37,28 @@ formula=(
   rbenv
 )
 
-#Retired Formula
-#jenkins-lts
-#nexus
+# Optional Formula
+# jenkins-lts
+# nexus
+# sourcetree
+# postman
 
-#Install Java
+# install taps
 brew tap AdoptOpenJDK/openjdk
-brew cask install adoptopenjdk8
 
-# Install apps
+# install apps
 echo "Installing apps..."
 read -p "Press any key to continue... " -n1 -s
 brew cask install --appdir="/Applications" ${apps[@]}
 
-# Install formula
+# install formula
 echo "Installing formula..."
 read -p "Press any key to continue... " -n1 -s
 brew install ${formula[@]}
 
 brew cleanup
 
-#Python
+# setup Python
 echo "Python setup..."
 read -p "Press any key to continue... " -n1 -s
 cd ~
@@ -73,7 +66,7 @@ mkdir ~/.virtualenvs
 python3 -m venv ~/.virtualenvs/myvenv
 source ~/.virtualenvs/myvenv/bin/activate
 
-#Ruby
+# seutp Ruby
 echo "Ruby setup..."
 read -p "Press any key to continue... " -n1 -s
 rbenv init
@@ -82,14 +75,14 @@ rbenv rehash
 gem install bundler
 rbenv rehash
 
-#Install Snyk CLI
+# install Snyk CLI
 echo "Install Snyk..."
 read -p "Press any key to continue... " -n1 -s
 npm install -g snyk
 npm install -g snyk-to-html
 npm install -g is-website-vulnerable
 
-#Clone Goof Git Repos
+# clone repos
 echo "Cloning git repos..."
 read -p "Press any key to continue... " -n1 -s
 git clone https://github.com/snyk/goof.git ~/Snyk/Workspace/goof
