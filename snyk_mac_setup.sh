@@ -77,13 +77,13 @@ brew cleanup
 #gem install bundler
 #rbenv rehash
 
-# install Snyk CLI
 echo "Install Snyk..."
 read -p "Press any key to continue... " -n1 -s
 npm install -g snyk
-npm install -g snyk-to-html
-npm install -g is-website-vulnerable
-npm install -g dockly
+npm install -g snyk-to-html # https://github.com/snyk/snyk-to-html
+npm install -g dockly # https://github.com/lirantal/dockly
+npm install -g snyk-enrich-license #https://github.com/snyk/snyk-enrich-license
+npm install -g is-website-vulnerable # https://github.com/lirantal/is-website-vulnerable
 
 #git clone https://github.com/snyk-tech-services/snyk-scm-refresh ~/Snyk\ Workspace/
 #cd ~/Snyk\ Workspace/
