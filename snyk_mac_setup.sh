@@ -83,6 +83,7 @@ read -p "Press any key to continue... " -n1 -s
 npm install -g snyk
 npm install -g snyk-to-html
 npm install -g is-website-vulnerable
+npm install -g dockly
 
 # clone repos
 #echo "Cloning git repos..."
