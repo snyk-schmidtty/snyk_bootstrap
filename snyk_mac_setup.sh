@@ -15,8 +15,7 @@ apps=(
   intellij-idea-ce
   dotnet-sdk
   eclipse-ide
-  adoptopenjdk
-  adoptopenjdk8
+  adoptopenjdk/openjdk/adoptopenjdk8
   pycharm-ce
   webex-meetings
 )
@@ -29,19 +28,21 @@ formula=(
   docker
   go
   git
-  gradle
   htop
-  maven
   node
+  gradle
+  maven
   python3
-  rbenv
+  jenv
 )
 
 # Optional Formula
+# kubernetes-helm
 # jenkins-lts
 # nexus
 # sourcetree
 # postman
+# rbenv
 
 # install taps
 brew tap AdoptOpenJDK/openjdk
@@ -49,7 +50,8 @@ brew tap AdoptOpenJDK/openjdk
 # install apps
 echo "Installing apps..."
 read -p "Press any key to continue... " -n1 -s
-brew cask install --appdir="/Applications" ${apps[@]}
+brew cask install ${apps[@]}
+#brew cask install --appdir="/Applications" ${apps[@]}
 
 # install formula
 echo "Installing formula..."
@@ -59,21 +61,21 @@ brew install ${formula[@]}
 brew cleanup
 
 # setup Python
-echo "Python setup..."
-read -p "Press any key to continue... " -n1 -s
-cd ~
-mkdir ~/.virtualenvs
-python3 -m venv ~/.virtualenvs/myvenv
-source ~/.virtualenvs/myvenv/bin/activate
+#echo "Python setup..."
+#read -p "Press any key to continue... " -n1 -s
+#cd ~
+#mkdir ~/.virtualenvs
+#python3 -m venv ~/.virtualenvs/myvenv
+#source ~/.virtualenvs/myvenv/bin/activate
 
-# seutp Ruby
-echo "Ruby setup..."
-read -p "Press any key to continue... " -n1 -s
-rbenv init
-rbenv install 2.6.3
-rbenv rehash
-gem install bundler
-rbenv rehash
+# setup Ruby
+#echo "Ruby setup..."
+#read -p "Press any key to continue... " -n1 -s
+#rbenv init
+#rbenv install 2.6.3
+#rbenv rehash
+#gem install bundler
+#rbenv rehash
 
 # install Snyk CLI
 echo "Install Snyk..."
@@ -83,16 +85,16 @@ npm install -g snyk-to-html
 npm install -g is-website-vulnerable
 
 # clone repos
-echo "Cloning git repos..."
-read -p "Press any key to continue... " -n1 -s
-git clone https://github.com/snyk/goof.git ~/Snyk/Workspace/goof
-git clone https://github.com/snyk/java-goof.git ~/Snyk/Workspace/java-goof
-git clone https://github.com/snyk/docker-goof.git ~/Snyk/Workspace/docker-goof
-git clone https://github.com/snyk/shallow-goof.git ~/Snyk/Workspace/shallow-goof
-git clone https://github.com/snyk/goof-heroku.git ~/Snyk/Workspace/goof-heroku
-git clone https://github.com/pstember/go-goof.git ~/Snyk/Workspace/go-goof
-git clone https://github.com/pstember/ruby-goof.git ~/Snyk/Workspace/ruby-goof
-git clone https://github.com/pstember/goof-jenkins.git ~/Snyk/Workspace/goof-jenkins
-git clone https://github.com/pstember/dotNet-goof.git ~/Snyk/Workspace/dotNet-goof
+#echo "Cloning git repos..."
+#read -p "Press any key to continue... " -n1 -s
+#git clone https://github.com/snyk/goof.git ~/Snyk/Workspace/goof
+#git clone https://github.com/snyk/java-goof.git ~/Snyk/Workspace/java-goof
+#git clone https://github.com/snyk/docker-goof.git ~/Snyk/Workspace/docker-goof
+#git clone https://github.com/snyk/shallow-goof.git ~/Snyk/Workspace/shallow-goof
+#git clone https://github.com/snyk/goof-heroku.git ~/Snyk/Workspace/goof-heroku
+#git clone https://github.com/pstember/go-goof.git ~/Snyk/Workspace/go-goof
+#git clone https://github.com/pstember/ruby-goof.git ~/Snyk/Workspace/ruby-goof
+#git clone https://github.com/pstember/goof-jenkins.git ~/Snyk/Workspace/goof-jenkins
+#git clone https://github.com/pstember/dotNet-goof.git ~/Snyk/Workspace/dotNet-goof
 
 echo "Ready to Snyk"
