@@ -85,6 +85,10 @@ npm install -g snyk-to-html
 npm install -g is-website-vulnerable
 npm install -g dockly
 
+#git clone https://github.com/snyk-tech-services/snyk-scm-refresh ~/Snyk\ Workspace/
+#cd ~/Snyk\ Workspace/
+#python3 -m pip install -r ~/Snyk\ Workspace/snyk-scm-refresh/requirements.txt
+
 # clone repos
 #echo "Cloning git repos..."
 #read -p "Press any key to continue... " -n1 -s
