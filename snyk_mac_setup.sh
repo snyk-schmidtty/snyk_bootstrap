@@ -16,6 +16,7 @@ apps=(
   dotnet-sdk
   eclipse-ide
   adoptopenjdk/openjdk/adoptopenjdk8
+  adoptopenjdg/openjdk/adoptopenjdk11
   pycharm-ce
   webex-meetings
 )
@@ -84,10 +85,9 @@ npm install -g snyk-to-html # https://github.com/snyk/snyk-to-html
 npm install -g dockly # https://github.com/lirantal/dockly
 npm install -g snyk-enrich-license #https://github.com/snyk/snyk-enrich-license
 npm install -g is-website-vulnerable # https://github.com/lirantal/is-website-vulnerable
-
-#git clone https://github.com/snyk-tech-services/snyk-scm-refresh ~/Snyk\ Workspace/
-#cd ~/Snyk\ Workspace/
-#python3 -m pip install -r ~/Snyk\ Workspace/snyk-scm-refresh/requirements.txt
+mkdir ~/Snyk\ Workspace/
+git clone https://github.com/snyk-tech-services/snyk-scm-refresh ~/Snyk\ Workspace/snyk-scm-refresh
+python3 -m pip install -r ~/Snyk\ Workspace/snyk-scm-refresh/requirements.txt
 
 # clone repos
 #echo "Cloning git repos..."
