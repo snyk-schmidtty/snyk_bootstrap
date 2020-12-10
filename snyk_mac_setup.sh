@@ -13,6 +13,7 @@ xcode-select --install
 # Apps to install
 apps=(
   intellij-idea-ce
+  docker
   dotnet-sdk
   eclipse-ide
   adoptopenjdk/openjdk/adoptopenjdk8
