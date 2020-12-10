@@ -16,13 +16,17 @@ apps=(
   dotnet-sdk
   eclipse-ide
   adoptopenjdk/openjdk/adoptopenjdk8
-  adoptopenjdg/openjdk/adoptopenjdk11
+  adoptopenjdk/openjdk/adoptopenjdk11
   pycharm-ce
   webex-meetings
 )
 
 # Formula to install
 formula=(
+  openjdk
+  maven
+  gradle
+  jenv
   amazon-ecs-cli
   azure-cli
   dep
@@ -31,10 +35,7 @@ formula=(
   git
   htop
   node
-  gradle
-  maven
   python3
-  jenv
 )
 
 # Optional Formula
@@ -48,16 +49,16 @@ formula=(
 # install taps
 brew tap AdoptOpenJDK/openjdk
 
+# install formula
+echo "Installing formula..."
+read -p "Press any key to continue... " -n1 -s
+brew install ${formula[@]}
+
 # install apps
 echo "Installing apps..."
 read -p "Press any key to continue... " -n1 -s
 brew cask install ${apps[@]}
 #brew cask install --appdir="/Applications" ${apps[@]}
-
-# install formula
-echo "Installing formula..."
-read -p "Press any key to continue... " -n1 -s
-brew install ${formula[@]}
 
 brew cleanup
 
@@ -85,9 +86,10 @@ npm install -g snyk-to-html # https://github.com/snyk/snyk-to-html
 npm install -g dockly # https://github.com/lirantal/dockly
 npm install -g snyk-enrich-license #https://github.com/snyk/snyk-enrich-license
 npm install -g is-website-vulnerable # https://github.com/lirantal/is-website-vulnerable
-mkdir ~/Snyk\ Workspace/
-git clone https://github.com/snyk-tech-services/snyk-scm-refresh ~/Snyk\ Workspace/snyk-scm-refresh
-python3 -m pip install -r ~/Snyk\ Workspace/snyk-scm-refresh/requirements.txt
+npm install -g snyk-api-import #https://github.com/snyk-tech-services/snyk-api-import/
+#mkdir ~/Snyk\ Workspace/
+#git clone https://github.com/snyk-tech-services/snyk-scm-refresh ~/Snyk\ Workspace/snyk-scm-refresh
+#python3 -m pip install -r ~/Snyk\ Workspace/snyk-scm-refresh/requirements.txt
 
 # clone repos
 #echo "Cloning git repos..."
