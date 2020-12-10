@@ -3,7 +3,7 @@
 # see https://github.com/swschmidt/mac_bootstrap for base Mac setup
 
 # install brew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+#/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # install Xcode
 echo "Installing Xcode..."
@@ -23,6 +23,12 @@ apps=(
 
 # Formula to install
 formula=(
+  git
+  node
+  openjdk
+  maven
+  gradle
+  python3
   amazon-ecs-cli
   azure-cli
   dep
@@ -30,17 +36,11 @@ formula=(
   go
   git
   htop
-  node
-  gradle
-  maven
-  python3
   jenv
 )
 
 # Optional Formula
 # kubernetes-helm
-# jenkins-lts
-# nexus
 # sourcetree
 # postman
 # rbenv
@@ -48,16 +48,18 @@ formula=(
 # install taps
 brew tap AdoptOpenJDK/openjdk
 
+# install formula
+echo "Installing formula..."
+read -p "Press any key to continue... " -n1 -s
+brew install ${formula[@]}
+
 # install apps
 echo "Installing apps..."
 read -p "Press any key to continue... " -n1 -s
 brew cask install ${apps[@]}
 #brew cask install --appdir="/Applications" ${apps[@]}
 
-# install formula
-echo "Installing formula..."
-read -p "Press any key to continue... " -n1 -s
-brew install ${formula[@]}
+
 
 brew cleanup
 
@@ -85,9 +87,9 @@ npm install -g snyk-to-html # https://github.com/snyk/snyk-to-html
 npm install -g dockly # https://github.com/lirantal/dockly
 npm install -g snyk-enrich-license #https://github.com/snyk/snyk-enrich-license
 npm install -g is-website-vulnerable # https://github.com/lirantal/is-website-vulnerable
-mkdir ~/Snyk\ Workspace/
-git clone https://github.com/snyk-tech-services/snyk-scm-refresh ~/Snyk\ Workspace/snyk-scm-refresh
-python3 -m pip install -r ~/Snyk\ Workspace/snyk-scm-refresh/requirements.txt
+#mkdir ~/Snyk\ Workspace/
+#git clone https://github.com/snyk-tech-services/snyk-scm-refresh ~/Snyk\ Workspace/snyk-scm-refresh
+#python3 -m pip install -r ~/Snyk\ Workspace/snyk-scm-refresh/requirements.txt
 
 # clone repos
 #echo "Cloning git repos..."
