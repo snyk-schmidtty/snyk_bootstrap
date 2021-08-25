@@ -44,6 +44,7 @@ formula=(
 # sourcetree
 # postman
 # rbenv
+# dive https://github.com/wagoodman/dive
 
 # install taps
 brew tap AdoptOpenJDK/openjdk
